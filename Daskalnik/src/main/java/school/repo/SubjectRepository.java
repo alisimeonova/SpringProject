@@ -61,11 +61,12 @@ public class SubjectRepository implements ISubjectRepository
 
 			@Override
 			public Subject mapRow(ResultSet rs, int rowNum) throws SQLException {
-				// TODO Auto-generated method stub
-				return null;
-			});
+				subject.setName(rs.getString("Name"));
+				subject.setId(rs.getLong("ID"));
+				return subject;
+			}
 		
-		}
+		}, subject);    
 	}
 
 	@Override
